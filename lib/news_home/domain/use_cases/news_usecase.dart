@@ -7,7 +7,7 @@ class GetNewsUsecase {
   final NewsHomeRepository _newsHomeRepository;
 
   GetNewsUsecase(this._newsHomeRepository);
-  ResultFuture<NewsResponse> getNews() {
-    return _newsHomeRepository.getNewsResponse();
+  ResultFuture<NewsResponse> getNews({required int page}) {
+    return _newsHomeRepository.getNewsResponse(page: page);
   }
 }

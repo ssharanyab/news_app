@@ -17,6 +17,9 @@ abstract class NewsDatasource {
   @GET('/all')
   Future<NewsResponse> getNews({
     @Query("api_token") required String apiToken,
+    @Query("language") String language = "en",
+    @Query("limit") int limit = 10,
+    @Query("page") required int page,
   });
 }
 

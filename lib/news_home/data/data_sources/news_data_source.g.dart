@@ -24,9 +24,19 @@ class _NewsDatasource implements NewsDatasource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<NewsResponse> getNews({required String apiToken}) async {
+  Future<NewsResponse> getNews({
+    required String apiToken,
+    String language = "en",
+    int limit = 10,
+    required int page,
+  }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'api_token': apiToken};
+    final queryParameters = <String, dynamic>{
+      r'api_token': apiToken,
+      r'language': language,
+      r'limit': limit,
+      r'page': page,
+    };
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<NewsResponse>(Options(

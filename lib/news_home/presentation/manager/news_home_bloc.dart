@@ -9,17 +9,29 @@ part 'news_home_state.dart';
 
 class NewsHomeBloc extends Bloc<NewsHomeEvent, NewsHomeState> {
   final GetNewsUsecase _getNewsUsecase;
+
+  int page = 1;
+  bool hasMore = true;
+  List<NewsData> articles = [];
+
   NewsHomeBloc(this._getNewsUsecase) : super(NewsHomeInitial()) {
     on<GetNewsEvent>(_handleGetNewsEvent);
   }
   _handleGetNewsEvent(event, emit) async {
-    emit(FetchingNewsState());
-    final result = await _getNewsUsecase.getNews();
+    final currentState = state;
 
+    if (currentState is NewsLoadedState && !currentState.hasMore) return;
+
+    final result = await _getNewsUsecase.getNews(page: page);
     result.fold(
-      (l) => emit(NewsErrorState()),
+      (l) {
+        emit(NewsErrorState(message: l.message));
+      },
       (r) {
-        emit(NewsLoadedState(newsResponse: r));
+        hasMore = r.meta.found > (r.meta.page * r.meta.limit);
+        if (hasMore) page++;
+        articles.addAll(r.data);
+        emit(NewsLoadedState(hasMore: hasMore));
       },
     );
   }

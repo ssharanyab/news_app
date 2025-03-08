@@ -13,9 +13,9 @@ class NewsHomeRepoImpl implements NewsHomeRepository {
   NewsHomeRepoImpl(this._newsDatasource);
 
   @override
-  ResultFuture<NewsResponse> getNewsResponse() async {
+  ResultFuture<NewsResponse> getNewsResponse({required int page}) async {
     try {
-      final result = await _newsDatasource.getNews(apiToken: Env.NEWS_API_KEY);
+      final result = await _newsDatasource.getNews(apiToken: Env.NEWS_API_KEY, page: page);
       return Right(result);
     } on DioException catch (error) {
       return Left(Failure(
