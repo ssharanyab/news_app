@@ -3,9 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:news_app/core/env/env.dart';
 import 'package:news_app/core/failure.dart';
 import 'package:news_app/core/typedef.dart';
-import 'package:news_app/news_home/data/data_sources/news_data_source.dart';
-import 'package:news_app/news_home/data/models/news_model.dart';
-import 'package:news_app/news_home/domain/repositories/news_home_repo.dart';
+
+import '../../domain/repositories/news_home_repo.dart';
+import '../data_sources/news_data_source.dart';
+import '../models/news_model.dart';
 
 class NewsHomeRepoImpl implements NewsHomeRepository {
   final NewsDatasource _newsDatasource;

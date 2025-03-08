@@ -1,4 +1,4 @@
-import '../../../core/typedef.dart';
+import '../../../../core/typedef.dart';
 import '../../data/models/news_model.dart';
 
 abstract interface class NewsHomeRepository {

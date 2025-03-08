@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/news_home/data/models/news_model.dart';
-import 'package:news_app/news_home/presentation/manager/news_home_bloc.dart';
 
-import '../../../core/init_app.dart';
+import '../../../../core/init_app.dart';
+import '../../data/models/news_model.dart';
+import '../manager/news_home_bloc.dart';
 import '../widgets/news_card.dart';
 
 class ListingScreen extends StatefulWidget {

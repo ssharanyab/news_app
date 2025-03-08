@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:news_app/news_home/data/models/news_model.dart';
 
+import '../../data/models/news_model.dart';
 import '../../domain/use_cases/news_usecase.dart';
 
 part 'news_home_event.dart';

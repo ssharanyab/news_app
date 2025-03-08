@@ -43,6 +43,7 @@ dependencies:
   flutter_bloc:
   cached_network_image:
   flutter_cache_manager: ^3.3.0
+  mocktail:
 
 
 

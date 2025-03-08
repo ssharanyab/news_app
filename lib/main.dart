@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/news_home/presentation/pages/listing_screen.dart';
+import 'package:news_app/src/news_home/presentation/pages/detail_screen.dart';
+import 'package:news_app/src/news_home/presentation/pages/listing_screen.dart';
 
 import 'core/init_app.dart';
-import 'news_home/presentation/pages/detail_screen.dart';
 
 Future<void> main() async {
   initApp();

@@ -4,7 +4,7 @@ import 'dart:math' as math;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/cache_manager.dart';
+import '../../../../core/cache_manager.dart';
 import '../../data/models/news_model.dart';
 
 class NewsCard extends StatelessWidget {

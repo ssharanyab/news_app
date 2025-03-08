@@ -1,7 +1,7 @@
 import 'package:news_app/core/typedef.dart';
-import 'package:news_app/news_home/domain/repositories/news_home_repo.dart';
 
 import '../../data/models/news_model.dart';
+import '../repositories/news_home_repo.dart';
 
 class GetNewsUsecase {
   final NewsHomeRepository _newsHomeRepository;
