@@ -24,12 +24,12 @@ class DetailScreen extends StatelessWidget {
           tag: imageUrl,
           child: InteractiveViewer(
             scaleFactor: 1000,
-            boundaryMargin: EdgeInsets.all(0),
+            boundaryMargin: const EdgeInsets.all(0),
             child: CachedNetworkImage(
               imageUrl: imageUrl,
               width: double.infinity,
               fit: BoxFit.fitHeight,
-              fadeInDuration: Duration.zero, // ✅ Instant load if cached
+              fadeInDuration: Duration.zero,
               fadeOutDuration: Duration.zero,
             ),
           ),

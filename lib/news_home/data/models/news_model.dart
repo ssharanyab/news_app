@@ -33,6 +33,7 @@ class NewsData {
   final String uuid;
   final String title;
   final String description;
+  @JsonKey(name: "image_url")
   final String? imageUrl;
 
   NewsData({

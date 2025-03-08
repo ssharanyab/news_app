@@ -37,12 +37,12 @@ NewsData _$NewsDataFromJson(Map<String, dynamic> json) => NewsData(
       uuid: json['uuid'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
-      imageUrl: json['imageUrl'] as String?,
+      imageUrl: json['image_url'] as String?,
     );
 
 Map<String, dynamic> _$NewsDataToJson(NewsData instance) => <String, dynamic>{
       'uuid': instance.uuid,
       'title': instance.title,
       'description': instance.description,
-      'imageUrl': instance.imageUrl,
+      'image_url': instance.imageUrl,
     };
